@@ -170,7 +170,7 @@
 (global-set-key (kbd "C-a") 'smart-beginning-of-line)
 (global-set-key [home] 'smart-beginning-of-line)
 
-(set-face-font 'default "Dejavu Sans Mono-12")
+(set-face-font 'default "Dejavu Sans Mono-14")
 (set-fontset-font "fontset-default" '(#x1100 . #xffdc)
                   '("NanumGothicCoding" . "iso10646-1"))
 (set-fontset-font "fontset-default" '(#xe0bc . #xf66e)
@@ -212,8 +212,8 @@
   '(progn
     (add-to-list 'load-path "~/.emacs.d/slime/contrib")
     (slime-setup '(slime-fancy slime-banner))
-    ;; (setq slime-complete-symbol*-fancy t)
-    ;; (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
+    (setq slime-complete-symbol*-fancy t)
+    (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
     (define-key slime-mode-map (kbd "TAB") 'slime-indent-and-complete-symbol)
     (define-key slime-repl-mode-map (kbd "M-RET") 'electrify-return-if-match)
     (setq slime-net-coding-system 'utf-8-unix)))
