@@ -87,12 +87,19 @@
   ;; emacs 24 설정 코드
   
   ;; elpa 시스템 많이 부족하다. 좀 더 발전하면 써야겠다.
-  ;; (require 'package)
-  ;; (add-to-list 'package-archives 
-  ;; 	       '("marmalade" . "http://marmalade-repo.org/packages/") t)
+  (require 'package)
+  (add-to-list 'package-archives 
+  	       '("marmalade" . "http://marmalade-repo.org/packages/") t)
   ;; (add-to-list 'package-archives
   ;; 	       '("melpa" . "http://melpa.milkbox.net/packages/") t)
-  ;; (package-initialize)
+  (package-initialize)
+  (when (not package-archive-contents)
+    (package-refresh-contents))
+  (defvar my-packages '(clojure-mode
+			nrepl))
+  (dolist (p my-packages)
+    (when (not (package-installed-p p))
+      (package-install p)))
   )
 
 ;(setenv "PATH" "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin")
@@ -218,6 +225,7 @@
     (define-key slime-repl-mode-map (kbd "M-RET") 'electrify-return-if-match)
     (setq slime-net-coding-system 'utf-8-unix)))
 ;(setq inferior-lisp-program "clisp")
+;(setq inferior-lisp-program "sbcl")
 (setq inferior-lisp-program "/usr/local/share/ccl/dx86cl64 -K utf-8")
 ;; (setq slime-lisp-implementations
 ;;       `((sbcl ("/usr/local/bin/sbcl"))))
