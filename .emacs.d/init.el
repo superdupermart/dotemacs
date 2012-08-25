@@ -95,8 +95,12 @@
   (package-initialize)
   (when (not package-archive-contents)
     (package-refresh-contents))
-  (defvar my-packages '(clojure-mode
-			nrepl))
+  (defvar my-packages '(starter-kit
+                        starter-kit-bindings
+                        starter-kit-lisp
+                        clojure-mode
+			nrepl)
+    "A list of packages to ensure are installed at launch.")
   (dolist (p my-packages)
     (when (not (package-installed-p p))
       (package-install p)))
@@ -177,7 +181,8 @@
 (global-set-key (kbd "C-a") 'smart-beginning-of-line)
 (global-set-key [home] 'smart-beginning-of-line)
 
-(set-face-font 'default "Dejavu Sans Mono-14")
+(set-face-font 'default "Monaco-14")
+;(set-face-font 'default "Dejavu Sans Mono-14")
 (set-fontset-font "fontset-default" '(#x1100 . #xffdc)
                   '("NanumGothicCoding" . "iso10646-1"))
 (set-fontset-font "fontset-default" '(#xe0bc . #xf66e)

@@ -1,0 +1,19 @@
+
+;; ----- smex-history -----
+(
+ eshell
+ package-list-packages
+ menu-bar-mode
+ cd
+ 5x5
+ arp
+ dbx
+)
+
+;; ----- smex-data -----
+(
+ (menu-bar-mode . 1)
+ (slime . 1)
+ (eshell . 3)
+ (package-list-packages . 2)
+)
