@@ -1,19 +1,24 @@
 
 ;; ----- smex-history -----
 (
+ tool-bar-mode
  eshell
+ paredit-mode
  package-list-packages
  menu-bar-mode
  cd
  5x5
- arp
- dbx
 )
 
 ;; ----- smex-data -----
 (
  (menu-bar-mode . 1)
- (slime . 1)
- (eshell . 3)
+ (slime . 2)
+ (eshell . 7)
  (package-list-packages . 2)
+ (paredit-mode . 3)
+ (nrepl-jack-in . 2)
+ (run-geiser . 2)
+ (tool-bar-mode . 1)
+ (geiser . 1)
 )

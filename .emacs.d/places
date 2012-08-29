@@ -1,4 +1,10 @@
 ;;; -*- coding: utf-8 -*-
-(("/Users/irus/.emacs.d/elpa/starter-kit-bindings-2.0.2/starter-kit-bindings-autoloads.el" . 2120)
+(("/Users/irus/.bash_profile" . 8)
+ ("/Users/irus/.emacs.d/elpa/starter-kit-bindings-2.0.2/starter-kit-bindings-autoloads.el" . 2120)
  ("/Users/irus/.emacs.d/elpa/starter-kit-lisp-2.0.3/starter-kit-lisp-autoloads.el" . 1916)
- ("/Users/irus/.emacs.d/init.el" . 6150))
+ ("/Users/irus/.emacs.d/init.el" . 2400)
+ ("/Users/irus/dev/clojure/foo.clj" . 86)
+ ("/Users/irus/dev/clojure/shclj/project.clj" . 323)
+ ("/Users/irus/dev/clojure/shclj/src/shclj/core.clj" . 98)
+ ("/Users/irus/dev/code/bin/repl.sh" . 748)
+ ("/usr/local/bin/clj" . 303))
