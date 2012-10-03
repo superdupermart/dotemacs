@@ -24,7 +24,7 @@
 	  [(0 3)
 	   nil "SOAP library to access debbugs servers" tar])
  (dict-tree .
-	    [(0 12 7)
+	    [(0 12 8)
 	     ((trie
 	       (0 2 5))
 	      (tNFA
@@ -83,12 +83,12 @@
  (nlinum .
 	 [(1 0)
 	  nil "Show line numbers in the margin" single])
+ (num3-mode .
+	    [(1 0)
+	     nil "highlight groups of digits in long numbers" single])
  (oauth2 .
 	 [(0 8)
 	  nil "OAuth 2.0 Authorization Protocol" single])
- (org .
-      [(20120824)
-       nil "Outline-based notes management and organizer" tar])
  (quarter-plane .
 		[(0 1)
 		 nil "Minor mode for quarter-plane style editing" single])
@@ -116,14 +116,14 @@
 	  (0 1)))
 	"Tagged non-deterministic finite-state automata" single])
  (trie .
-       [(0 2 5)
+       [(0 2 6)
 	((tNFA
 	  (0 1 1))
 	 (heap
 	  (0 3)))
 	"Trie data structure" single])
  (undo-tree .
-	    [(0 5 3)
+	    [(0 5 5)
 	     nil "Treat undo history as a tree" single])
  (uni-confusables .
 		  [(0 1)
@@ -136,5 +136,7 @@
 	      nil "Resize windows interactively" single])
  (xclip .
 	[(1 0)
-	 nil "Emacs Interface to XClip" single]))
-
+	 nil "Emacs Interface to XClip" single])
+ (yasnippet .
+	    [(0 8 0)
+	     nil "A template system for Emacs" tar]))

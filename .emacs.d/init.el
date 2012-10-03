@@ -1,71 +1,8 @@
-;; ;; cedet =====================================================
-;; (load-file "~/.emacs.d/cedet-1.1/common/cedet.el")
-;; (global-ede-mode t)
-;; (semantic-load-enable-code-helpers)
-;; (global-srecode-minor-mode 1)
-
-;; ;; ecb =======================================================
-;; (add-to-list 'load-path "~/.emacs.d/ecb-snap/")
-;; (require 'ecb)
-;; (setq stack-trace-on-error t)
-
-;; (define-key ecb-mode-map (kbd "M-1") 'ecb-goto-window-directories)
-;; (define-key ecb-mode-map (kbd "M-2") 'ecb-goto-window-sources)
-;; (define-key ecb-mode-map (kbd "M-3") 'ecb-goto-window-methods)
-;; (define-key ecb-mode-map (kbd "M-4") 'ecb-goto-window-history)
-;; (define-key ecb-mode-map (kbd "M-5") 'ecb-goto-window-compilation)
-;; (define-key ecb-mode-map (kbd "M-0") 'ecb-goto-window-edit1)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(backup-directory-alist (quote (("." . "~/.emacs.d/backup-files"))))
- '(blink-cursor-mode nil)
- '(cua-enable-cua-keys (quote shift))
- '(cua-mode t nil (cua-base))
- '(current-language-environment "Korean")
- '(custom-enabled-themes (quote (adwaita)))
- '(ecb-compile-window-width (quote edit-window))
- '(ecb-excluded-directories-regexps (quote ("^\\.$" "^\\.\\.$")))
- '(ecb-ignore-pop-up-frames (quote always))
- '(ecb-options-version "2.40")
- '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
- '(ecb-show-sources-in-directories-buffer (quote always))
- '(ecb-source-path (quote (("~/dev/" "~/dev/"))))
- '(ecb-sources-sort-method (quote extension))
- '(ecb-tip-of-the-day nil)
- '(ecb-tree-do-not-leave-window-after-select (quote (ecb-methods-buffer-name ecb-sources-buffer-name ecb-directories-buffer-name ecb-history-buffer-name)))
- '(ecb-tree-make-parent-node-sticky nil)
- '(ecb-use-recursive-edit t)
- '(ecb-windows-width 0.2)
- '(geiser-racket-binary "/Applications/Racket_v5.3/bin/racket")
- '(geiser-racket-collects (quote ("/Applications/Racket_v5.3/collects")))
- '(ido-mode (quote both) nil (ido))
- '(mouse-wheel-progressive-speed nil)
- '(send-mail-function (quote sendmail-send-it))
- '(show-paren-mode t)
- '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-;; macosx 에서 emacs 를 쓸때 bash의 PATH 와 eshell 의 PATH 를 동일하게 맞춰준다.
-(add-hook 'eshell-mode-hook
-          'lambda nil
-          (let ((bashpath (shell-command-to-string "/bin/bash -l -c 'printenv PATH'")))
-            (let ((pathlst (split-string bashpath ":")))
-              (setq exec-path pathlst))
-            (setq eshell-path-env bashpath)
-            (setenv "PATH" bashpath)))
-
 (add-to-list 'load-path "~/.emacs.d/")
 
 (prefer-coding-system 'utf-8)
+
+;(setenv "PATH" "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin")
 
 (when (<= emacs-major-version 23)
   ;; emacs 23 설정 코드
@@ -106,7 +43,72 @@
       (package-install p)))
   )
 
-;(setenv "PATH" "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin")
+;; ;; cedet =====================================================
+;; (load-file "~/.emacs.d/cedet-1.1/common/cedet.el")
+;; (global-ede-mode t)
+;; (semantic-load-enable-code-helpers)
+;; (global-srecode-minor-mode 1)
+
+;; ;; ecb =======================================================
+;; (add-to-list 'load-path "~/.emacs.d/ecb-snap/")
+;; (require 'ecb)
+;; (setq stack-trace-on-error t)
+
+;; (define-key ecb-mode-map (kbd "M-1") 'ecb-goto-window-directories)
+;; (define-key ecb-mode-map (kbd "M-2") 'ecb-goto-window-sources)
+;; (define-key ecb-mode-map (kbd "M-3") 'ecb-goto-window-methods)
+;; (define-key ecb-mode-map (kbd "M-4") 'ecb-goto-window-history)
+;; (define-key ecb-mode-map (kbd "M-5") 'ecb-goto-window-compilation)
+;; (define-key ecb-mode-map (kbd "M-0") 'ecb-goto-window-edit1)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
+ '(backup-directory-alist (quote (("." . "~/.emacs.d/backup-files"))))
+ '(blink-cursor-mode nil)
+ '(cua-enable-cua-keys (quote shift))
+ '(cua-mode t nil (cua-base))
+ '(current-language-environment "Korean")
+ '(custom-enabled-themes (quote (adwaita)))
+ '(ecb-compile-window-width (quote edit-window))
+ '(ecb-excluded-directories-regexps (quote ("^\\.$" "^\\.\\.$")))
+ '(ecb-ignore-pop-up-frames (quote always))
+ '(ecb-options-version "2.40")
+ '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
+ '(ecb-show-sources-in-directories-buffer (quote always))
+ '(ecb-source-path (quote (("~/dev/" "~/dev/"))))
+ '(ecb-sources-sort-method (quote extension))
+ '(ecb-tip-of-the-day nil)
+ '(ecb-tree-do-not-leave-window-after-select (quote (ecb-methods-buffer-name ecb-sources-buffer-name ecb-directories-buffer-name ecb-history-buffer-name)))
+ '(ecb-tree-make-parent-node-sticky nil)
+ '(ecb-use-recursive-edit t)
+ '(ecb-windows-width 0.2)
+ '(geiser-racket-binary "/Applications/Racket_v5.3/bin/racket")
+ '(geiser-racket-collects (quote ("/Applications/Racket_v5.3/collects")))
+ '(ido-mode (quote both) nil (ido))
+ '(menu-bar-mode t)
+ '(mouse-wheel-progressive-speed nil)
+ '(send-mail-function (quote sendmail-send-it))
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; macosx 에서 emacs 를 쓸때 bash의 PATH 와 eshell 의 PATH 를 동일하게 맞춰준다.
+(add-hook 'eshell-mode-hook
+          'lambda nil
+          (let ((bashpath (shell-command-to-string "/bin/bash -l -c 'printenv PATH'")))
+            (let ((pathlst (split-string bashpath ":")))
+              (setq exec-path pathlst))
+            (setq eshell-path-env bashpath)
+            (setenv "PATH" bashpath)))
 
 (defun irc-connect ()
   "connect to HanIRC server"
@@ -213,7 +215,7 @@
 
 ;; for Scheme
 ;(require 'quack)
-(load-file "~/.emacs.d/geiser/elisp/geiser.el")
+;(load-file "~/.emacs.d/geiser/elisp/geiser.el")
 
 ;; for Lisp
 (add-to-list 'load-path "~/.emacs.d/slime/")
@@ -337,17 +339,17 @@
 
 
 ; fullscreen for mac ========================================
-(require 'maxframe)
-(defvar my-fullscreen-p t "Check if fullscreen is on or off")
+;; (require 'maxframe)
+;; (defvar my-fullscreen-p t "Check if fullscreen is on or off")
 
-(defun my-toggle-fullscreen ()
-  (interactive)
-  (setq my-fullscreen-p (not my-fullscreen-p))
-  (if my-fullscreen-p
-      (restore-frame)
-    (maximize-frame)))
+;; (defun my-toggle-fullscreen ()
+;;   (interactive)
+;;   (setq my-fullscreen-p (not my-fullscreen-p))
+;;   (if my-fullscreen-p
+;;       (restore-frame)
+;;     (maximize-frame)))
 
-(global-set-key (kbd "M-RET") 'my-toggle-fullscreen)
+;; (global-set-key (kbd "M-RET") 'my-toggle-fullscreen)
 
 
 
