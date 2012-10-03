@@ -1,33 +1,35 @@
 
 ;; ----- smex-history -----
 (
- eshell
- ediff
- menu-bar-mode
- customize
+ geiser
  customize-group
- dired
- maximize-window
+ eshell
+ set-buffer-file-coding-system
+ recover-file
+ customize
+ ediff
 )
 
 ;; ----- smex-data -----
 (
  (menu-bar-mode . 7)
  (slime . 2)
- (eshell . 13)
+ (eshell . 18)
  (package-list-packages . 2)
  (paredit-mode . 3)
  (nrepl-jack-in . 2)
  (run-geiser . 6)
  (tool-bar-mode . 1)
- (geiser . 5)
+ (geiser . 11)
  (maximize-frame . 2)
  (minimize-window . 1)
  (geiser-autodoc-mode . 2)
  (dired . 3)
- (customize-group . 3)
+ (customize-group . 8)
  (maximize-window . 2)
- (customize . 1)
+ (customize . 2)
  (run-racket . 1)
  (ediff . 4)
+ (recover-file . 1)
+ (set-buffer-file-coding-system . 1)
 )

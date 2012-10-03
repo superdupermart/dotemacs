@@ -1,9 +1,3 @@
-(add-to-list 'load-path "~/.emacs.d/")
-
-(prefer-coding-system 'utf-8)
-
-;(setenv "PATH" "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin")
-
 (when (<= emacs-major-version 23)
   ;; emacs 23 설정 코드
   
@@ -86,6 +80,7 @@
  '(ecb-tree-make-parent-node-sticky nil)
  '(ecb-use-recursive-edit t)
  '(ecb-windows-width 0.2)
+ '(geiser-active-implementations (quote (racket guile)))
  '(geiser-racket-binary "/Applications/Racket_v5.3/bin/racket")
  '(geiser-racket-collects (quote ("/Applications/Racket_v5.3/collects")))
  '(ido-mode (quote both) nil (ido))
@@ -100,6 +95,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(add-to-list 'load-path "~/.emacs.d/")
+
+(prefer-coding-system 'utf-8)
+
+;(setenv "PATH" "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin")
 
 ;; macosx 에서 emacs 를 쓸때 bash의 PATH 와 eshell 의 PATH 를 동일하게 맞춰준다.
 (add-hook 'eshell-mode-hook
