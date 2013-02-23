@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- geiser
+ set-buffer-file-coding-system
  customize-group
  eshell
- set-buffer-file-coding-system
  recover-file
  customize
  ediff
+ menu-bar-mode
 )
 
 ;; ----- smex-data -----
@@ -31,5 +31,5 @@
  (run-racket . 1)
  (ediff . 4)
  (recover-file . 1)
- (set-buffer-file-coding-system . 1)
+ (set-buffer-file-coding-system . 2)
 )
